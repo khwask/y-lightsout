@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int questPtn = Integer.parseInt("010111010",2);
+        int questPtn = Integer.parseInt("000010000",2);
         solve(questPtn, 0, 0);
     }
 
@@ -23,8 +23,8 @@ public class Main {
             int btnPtn = Integer.parseInt(ptnStr[i], 2);
             int newPtn = questPtn ^ btnPtn;
             if (newPtn == 0) {
-                for (int a : ans) {
-                    System.out.print(a);
+                for (int a = 0; a < num + 1; a++) {
+                    System.out.print(ans[a]);
                 }
             } else {
                 solve(newPtn, num + 1, i + 1);
